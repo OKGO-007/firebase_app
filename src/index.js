@@ -1,13 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import App from './App';
+import Graph from './components/Graph';
+import Graph2 from './components/Graph2';
+import Input_weight from './components/Input_weight';
+import Header from './components/Header';
+import Routers from './Routers';
+import { AuthProvider } from './context/useAuthContext';// これで囲まれたところは承認状態を取得することができる
+
+import styled from "styled-components";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// const rootElement = document.getElementById('root');
+// const root = ReactDOM.createRoot(rootElement);
+
+// レスポンシブに対応しなければいけない
+
+
 root.render(
   <React.StrictMode>
-    <App />
+     <AuthProvider>
+        <Routers/ >
+    </AuthProvider>
   </React.StrictMode>
 );
 
